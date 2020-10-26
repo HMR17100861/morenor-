@@ -14,6 +14,8 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 public class Ventana1 extends JFrame {
@@ -57,7 +59,16 @@ public class Ventana1 extends JFrame {
 		btnInicio = new JButton("Iniciar sesion");
 		btnInicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
-			{
+			{List<Principal> vrLista = new ArrayList<Principal>();
+			
+			if(vrLista.contains(txtUsuario.getText())) {
+				if(vrLista.contains(pssContraseña.getText())) {
+					JOptionPane.showMessageDialog(null,"Inicio de sesion completado");
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "Error usario/contraseña erronea");
+					}
+			}
 				if(user.probarcontra()==true) 
 				{
 JOptionPane.showMessageDialog(null,"Inicio de sesion completado");
